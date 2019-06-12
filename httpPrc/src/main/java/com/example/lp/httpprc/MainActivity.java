@@ -1,10 +1,12 @@
 package com.example.lp.httpprc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.example.lp.httpprc.bean.testbean;
+import com.example.lp.lpglide.LpGlideActivity;
 import com.example.lp.lphttp.LpHttp;
 import com.example.lp.lphttp.response.LpResponseDataListener;
 
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         testIHttp();
+        Intent intent=new Intent(this, LpGlideActivity.class);
+        startActivity(intent);
     }
 
     private void testIHttp() {
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Object clazz) {
                 Log.e(TAG, "onSuccess:clazz "+clazz.toString()) ;
+
             }
 
             @Override
