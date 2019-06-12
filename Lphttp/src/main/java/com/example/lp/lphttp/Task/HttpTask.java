@@ -3,7 +3,7 @@ package com.example.lp.lphttp.Task;
 import android.support.annotation.NonNull;
 
 import com.alibaba.fastjson.JSON;
-import com.example.lp.lphttp.ThreadPoolManager;
+import com.example.lp.lphttp.LpHttp.ThreadPoolManager;
 import com.example.lp.lphttp.request.LpHttpRequest;
 import com.example.lp.lphttp.response.CallbackListener;
 

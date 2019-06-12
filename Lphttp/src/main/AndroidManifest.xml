@@ -1,2 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lp.ihttp" />
+    package="com.example.lp.ihttp">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application>
+        <activity android:name="com.example.lp.lphttp.LpHttpActivity"></activity>
+    </application>
+
+</manifest>

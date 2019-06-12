@@ -1,4 +1,4 @@
-package com.example.lp.httpprc.bean;
+package com.example.lp.lphttp.bean;
 
 import java.util.List;
 

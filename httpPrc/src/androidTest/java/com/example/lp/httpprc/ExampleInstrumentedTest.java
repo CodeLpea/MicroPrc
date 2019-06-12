@@ -3,8 +3,8 @@ package com.example.lp.httpprc;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
-import com.example.lp.httpprc.bean.testbean;
-import com.example.lp.lphttp.LpHttp;
+import com.example.lp.lphttp.bean.testbean;
+import com.example.lp.lphttp.LpHttp.LpHttp;
 import com.example.lp.lphttp.response.LpResponseDataListener;
 
 import org.junit.Test;
