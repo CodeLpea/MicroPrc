@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LpAccessibility</string>
+    <string name="accessibility_service_label">Lp全局手势</string>
+    <string name="app_accessibility_description">请打开开关</string>
+</resources>
