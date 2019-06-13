@@ -2,4 +2,11 @@
     <string name="app_name">LpAccessibility</string>
     <string name="accessibility_service_label">Lp全局手势</string>
     <string name="app_accessibility_description">请打开开关</string>
+
+    <string name="permission_flatwindow">打开「悬浮窗」</string>
+    <string name="permission_flatwindow_">请开启「悬浮窗」权限~</string>
+    <string name="permission_accessibility">打开「侧边栏」</string>
+    <string name="permission_accessibility_">请开启「侧边栏」权限~</string>
+    <string name="accessibility_description">开启此功能打开侧边栏</string>
+    <string name="permission_notice">已经打开所有权限</string>
 </resources>

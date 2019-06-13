@@ -7,20 +7,31 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.lp.lpaccessibility.Utils.PermissionUtil;
-
+/**
+ * 说明：本程序用于测试无障碍服务，提供一种思路
+ * 开启之后打开权限，不要关闭程序，否则权限自动失效
+ * 若关闭程序后还想使用无障碍服务，只能手动打开开关。
+ * 重启之后无效。
+ * 需要重新启动程序唤醒无障碍服务。
+ *解决办法：在主程序中注册开机自启动，并在启动广播中开启无障碍服务。
+ * */
 public class LpAccessBilityActivity extends AppCompatActivity {
     private static final int FLAT_REQUEST_CODE = 213;
     private static final int ACCESSIBILITY_REQUEST_CODE = 438;
-
+    private AppCompatButton mFlastWindowButton;
+    private AppCompatButton mAccessibilityButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_bility);
-        flatWindowVisible();//判断悬浮窗权限
+        mFlastWindowButton = findViewById(R.id.btn_flatwindow);
+        mAccessibilityButton = findViewById(R.id.btn_accessibility);
+        flatWindowVisible();
     }
 
     /**
@@ -31,15 +42,16 @@ public class LpAccessBilityActivity extends AppCompatActivity {
             // > M,grant permission
             if (PermissionUtil.isCanDrawOverlays(this)) {
                 // permission authorized,service go,button gone
+                mFlastWindowButton.setVisibility(View.GONE);
                 accessibilityVisible();
             } else {
                 // permission unauthorized,button visible
-                //没有悬浮窗权限，直接去申请
-                goGetFlatWindow();
+                mFlastWindowButton.setVisibility(View.VISIBLE);
+                Toast.makeText(this,getString(R.string.permission_flatwindow_),Toast.LENGTH_SHORT).show();
             }
         } else {
             // < M,service go,gone
-            //小于安卓m，直接去申请辅助功能
+            mFlastWindowButton.setVisibility(View.GONE);
             accessibilityVisible();
         }
     }
@@ -48,30 +60,32 @@ public class LpAccessBilityActivity extends AppCompatActivity {
      * Accessibility button visible
      */
     private void accessibilityVisible() {
-        if (PermissionUtil.isAccessibilityServiceEnable(this)) {
+        if(PermissionUtil.isAccessibilityServiceEnable(this)) {
+            Toast.makeText(this,getString(R.string.permission_notice),Toast.LENGTH_SHORT).show();
             finish();
-        } else {
-            goGetAccessibility();
+        }else {
+            mAccessibilityButton.setVisibility(View.VISIBLE);
+            Toast.makeText(this,getString(R.string.permission_accessibility_),Toast.LENGTH_SHORT).show();
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void goGetFlatWindow() {
+    public void goGetFlatWindow(View view) {
         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
-        startActivityForResult(intent, FLAT_REQUEST_CODE);
+        startActivityForResult(intent,FLAT_REQUEST_CODE);
     }
 
-    public void goGetAccessibility() {
+    public void goGetAccessibility(View view) {
         Intent accessibleIntent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-        startActivityForResult(accessibleIntent, ACCESSIBILITY_REQUEST_CODE);
+        startActivityForResult(accessibleIntent,ACCESSIBILITY_REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == FLAT_REQUEST_CODE) {
+        if(requestCode == FLAT_REQUEST_CODE) {
             flatWindowVisible();
-        } else if (requestCode == ACCESSIBILITY_REQUEST_CODE) {
+        }else if(requestCode == ACCESSIBILITY_REQUEST_CODE){
             accessibilityVisible();
         }
     }

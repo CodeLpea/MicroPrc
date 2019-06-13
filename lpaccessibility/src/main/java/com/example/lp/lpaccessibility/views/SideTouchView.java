@@ -95,4 +95,6 @@ public class SideTouchView extends View implements View.OnTouchListener {
         return false;
 //        return false;
     }
+
+
 }
