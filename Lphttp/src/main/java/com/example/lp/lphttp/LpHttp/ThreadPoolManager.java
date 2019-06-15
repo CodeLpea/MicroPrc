@@ -96,7 +96,6 @@ public class ThreadPoolManager {
         if (httpTask != null) {
             httpTask.setDelayTime(5000);//设置延时5000ms
             mDelayQueue.offer(httpTask);
-
         }
     }
 }
