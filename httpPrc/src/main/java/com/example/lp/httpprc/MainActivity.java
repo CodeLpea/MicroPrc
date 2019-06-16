@@ -13,13 +13,13 @@ import android.widget.Button;
 
 import com.example.lp.lpaccessibility.LpAccessBilityActivity;
 import com.example.lp.lpaccessibility.service.LpAccessibilityService;
-import com.example.lp.lpfacedetect.LpFaceDetect;
 
-import com.example.lp.lpfacedetect.detect.CallbackListener;
-
-import com.example.lp.lpfacedetect.detect.LpVisionDetRet;
 import com.example.lp.lpglide.LpGlideActivity;
+
 import com.example.lp.lphttp.LpHttpActivity;
+import com.tzutalin.dlib.LpFaceDetect;
+import com.tzutalin.dlib.VisionDetRet;
+import com.tzutalin.dlib.detect.CallbackListener;
 
 
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.bt_Lphttp:
-                    Intent intent1 = new Intent(MainActivity.this, LpHttpActivity.class);
+                   Intent intent1 = new Intent(MainActivity.this, LpHttpActivity.class);
                     startActivity(intent1);
 
                     break;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bt_testface:
                     CallbackListener callbackListener=new CallbackListener() {
                         @Override
-                        public void onGetFace(List<LpVisionDetRet> results) {
+                        public void onGetFace(List<VisionDetRet> results) {
                             Log.i(TAG, "onGetFace: "+results.size());
 
                         }
@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     };
-                    LpFaceDetect.getFaceDetRet(BitmapFactory.decodeResource(getResources(), R.drawable.testface),
-                            null,
+                    LpFaceDetect.getFaceDetRet(null,"/storage/emulated/0/news_article/8c942ec3d1420374de80db0b56717486.jpg",
+
                             callbackListener);
 
                     break;
