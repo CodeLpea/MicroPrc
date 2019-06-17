@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resConfig("zh-rCN")
     }
     buildTypes {
         release {
@@ -17,7 +18,11 @@ android {
         }
     }
 
-
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -29,10 +34,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    implementation(name: 'lpfacedetect-debug', ext: 'aar')
 
     implementation project(':Lphttp')
     implementation project(':lpaccessibility')
-    implementation project(':lpfacedetect')
+    /*implementation project(':lpfacedetect')*/
     if(!isModule.toBoolean()){
         implementation project(':LpGlide')
     }
