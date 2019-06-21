@@ -25,6 +25,12 @@
         android:layout_height="wrap_content"
         android:text="LpAccessBility"/>
     <Button
+        android:id="@+id/bt_LpAutoSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LpAutoSize"/>
+
+    <Button
         android:id="@+id/bt_testface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -14,6 +14,7 @@ import android.widget.Button;
 import com.example.lp.lpaccessibility.LpAccessBilityActivity;
 import com.example.lp.lpaccessibility.service.LpAccessibilityService;
 
+import com.example.lp.lpautosize.AutoSizeActivity;
 import com.example.lp.lpglide.LpGlideActivity;
 
 import com.example.lp.lphttp.LpHttpActivity;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface;
+    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
         bt_lpglide = findViewById(R.id.bt_LpGlide);
         bt_accessbility = findViewById(R.id.bt_LpAccessBility);
         bt_testface = findViewById(R.id.bt_testface);
+        lp_autosize = findViewById(R.id.bt_LpAutoSize);
         bt_lphttp.setOnClickListener(mainOnClicLitner);
         bt_lpglide.setOnClickListener(mainOnClicLitner);
         bt_accessbility.setOnClickListener(mainOnClicLitner);
         bt_testface.setOnClickListener(mainOnClicLitner);
+        lp_autosize.setOnClickListener(mainOnClicLitner);
 
     }
 
@@ -68,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bt_LpAccessBility:
                     Intent intent3 = new Intent(MainActivity.this, LpAccessBilityActivity.class);
                     startActivity(intent3);
+                    break;
+                case R.id.bt_LpAutoSize:
+                    Intent intent4 = new Intent(MainActivity.this, AutoSizeActivity.class);
+                    startActivity(intent4);
                     break;
                 case R.id.bt_testface:
                     CallbackListener callbackListener=new CallbackListener() {
