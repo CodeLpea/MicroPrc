@@ -18,6 +18,7 @@ import com.example.lp.lpautosize.AutoSizeActivity;
 import com.example.lp.lpglide.LpGlideActivity;
 
 import com.example.lp.lphttp.LpHttpActivity;
+import com.example.lp.lpuicore.UiCoreActivity;
 import com.tzutalin.dlib.LpFaceDetect;
 import com.tzutalin.dlib.VisionDetRet;
 import com.tzutalin.dlib.detect.CallbackListener;
@@ -29,7 +30,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize;
+    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
         bt_accessbility = findViewById(R.id.bt_LpAccessBility);
         bt_testface = findViewById(R.id.bt_testface);
         lp_autosize = findViewById(R.id.bt_LpAutoSize);
+        lp_uicore = findViewById(R.id.bt_uicore);
         bt_lphttp.setOnClickListener(mainOnClicLitner);
         bt_lpglide.setOnClickListener(mainOnClicLitner);
         bt_accessbility.setOnClickListener(mainOnClicLitner);
         bt_testface.setOnClickListener(mainOnClicLitner);
         lp_autosize.setOnClickListener(mainOnClicLitner);
+        lp_uicore.setOnClickListener(mainOnClicLitner);
 
     }
 
@@ -95,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
                             callbackListener);
 
                     break;
+                case R.id.bt_uicore:
+                    Intent intentUicore = new Intent(MainActivity.this, UiCoreActivity.class);
+                    startActivity(intentUicore);
+                    break;
+
             }
 
         }

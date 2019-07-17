@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/lpaccessibility" />
             <option value="$PROJECT_DIR$/lpautosize" />
             <option value="$PROJECT_DIR$/lpfacedetect" />
+            <option value="$PROJECT_DIR$/lpuicore" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

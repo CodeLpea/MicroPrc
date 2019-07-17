@@ -35,5 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="bt_testface"/>
+    <Button
+        android:id="@+id/bt_uicore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bt_uicore"/>
 
 </LinearLayout>
