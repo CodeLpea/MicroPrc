@@ -4,7 +4,8 @@
 
     <application>
         <activity android:name=".paint.PaintActivity" />
-        <activity android:name=".UiCoreActivity"></activity>
+        <activity android:name=".UiCoreActivity" />
+        <activity android:name=".canvas.CanvasActivity"></activity>
     </application>
 
 </manifest>

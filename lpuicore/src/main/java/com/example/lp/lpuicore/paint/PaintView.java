@@ -176,6 +176,7 @@ public class PaintView extends View {
         mShader = new ComposeShader(bitmapShader, linearGradient, PorterDuff.Mode.MULTIPLY);
         mPaint.setShader(mShader);
         canvas.drawCircle(250, 250, 250, mPaint);
+
     }
 
     /*控制画笔*/
@@ -190,7 +191,7 @@ public class PaintView extends View {
         //设置颜色
         mPaint.setColor(Color.RED);
         //设置效果，FILL为填充效果，忽略所有与笔画相关的设置
-        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
 //        //设置Paint对象ARGB颜色
 //        mPaint.setARGB(255, 255, 255, 0);
 //        //设置透明度，范围0-255
