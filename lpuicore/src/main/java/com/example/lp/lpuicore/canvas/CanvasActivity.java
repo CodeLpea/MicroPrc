@@ -10,6 +10,6 @@ public class CanvasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new SplitView(this));
+        setContentView(new CircleView(this));
     }
 }
