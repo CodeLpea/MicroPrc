@@ -30,8 +30,10 @@ public class LpAccessibilityService extends AccessibilityService {
 
     private void createToucher() {
         WindowManager windowManager = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
-        SideTouchView sideTouchView=new SideTouchView(this);
-        sideTouchView.getView(this,windowManager, this);
+        SideTouchView sideLeftTouchView=new SideTouchView(this);
+        SideTouchView sideRightTouchView=new SideTouchView(this);
+        sideLeftTouchView.getView(this,windowManager, this,true);
+        sideRightTouchView.getView(this,windowManager, this,false);
     }
 
 }
