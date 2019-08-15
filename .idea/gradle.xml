@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/httpPrc" />
             <option value="$PROJECT_DIR$/lpaccessibility" />
             <option value="$PROJECT_DIR$/lpautosize" />
+            <option value="$PROJECT_DIR$/lpdesignpatterns" />
             <option value="$PROJECT_DIR$/lpfacedetect" />
             <option value="$PROJECT_DIR$/lpuicore" />
           </set>

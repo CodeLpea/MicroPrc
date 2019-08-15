@@ -15,6 +15,7 @@ import com.example.lp.lpaccessibility.LpAccessBilityActivity;
 import com.example.lp.lpaccessibility.service.LpAccessibilityService;
 
 import com.example.lp.lpautosize.AutoSizeActivity;
+import com.example.lp.lpdesignpatterns.ImageLoaderPrc.ImageLoaderActivity;
 import com.example.lp.lpglide.LpGlideActivity;
 
 import com.example.lp.lphttp.LpHttpActivity;
@@ -30,7 +31,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore;
+    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore,lp_imageloader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         bt_accessbility = findViewById(R.id.bt_LpAccessBility);
         bt_testface = findViewById(R.id.bt_testface);
         lp_autosize = findViewById(R.id.bt_LpAutoSize);
+        lp_imageloader = findViewById(R.id.bt_imageloader);
         lp_uicore = findViewById(R.id.bt_uicore);
         bt_lphttp.setOnClickListener(mainOnClicLitner);
         bt_lpglide.setOnClickListener(mainOnClicLitner);
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         bt_testface.setOnClickListener(mainOnClicLitner);
         lp_autosize.setOnClickListener(mainOnClicLitner);
         lp_uicore.setOnClickListener(mainOnClicLitner);
+        lp_imageloader.setOnClickListener(mainOnClicLitner);
 
     }
 
@@ -78,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bt_LpAutoSize:
                     Intent intent4 = new Intent(MainActivity.this, AutoSizeActivity.class);
                     startActivity(intent4);
+                    break;
+                case R.id.bt_imageloader:
+                    Intent intentImageloder = new Intent(MainActivity.this, ImageLoaderActivity.class);
+                    startActivity(intentImageloder);
                     break;
                 case R.id.bt_testface:
                     CallbackListener callbackListener=new CallbackListener() {

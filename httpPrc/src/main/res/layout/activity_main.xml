@@ -36,6 +36,11 @@
         android:layout_height="wrap_content"
         android:text="bt_testface"/>
     <Button
+        android:id="@+id/bt_imageloader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bt_imageloader"/>
+    <Button
         android:id="@+id/bt_uicore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

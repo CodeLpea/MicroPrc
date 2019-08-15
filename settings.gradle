@@ -1,1 +1,1 @@
-include ':httpPrc', ':Lphttp', ':LpGlide', ':lpaccessibility', ':lpfacedetect', ':lpautosize', ':lpuicore'
+include ':httpPrc', ':Lphttp', ':LpGlide', ':lpaccessibility', ':lpfacedetect', ':lpautosize', ':lpuicore', ':lpdesignpatterns'
