@@ -1,2 +1,3 @@
 ImageLoaderPrc：
 主要是做面向对象六大原则的练习
+并用Builder方法重构代码

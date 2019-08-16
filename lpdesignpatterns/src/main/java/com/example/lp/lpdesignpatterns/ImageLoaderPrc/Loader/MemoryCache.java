@@ -25,12 +25,12 @@ public class MemoryCache implements ImageCache{
     }
 
     @Override
-    public Bitmap get(String url) {
+    public synchronized Bitmap get(String url) {
         return mMemeryCache.get(url);
     }
 
     @Override
-    public void put(String url, Bitmap bitmap) {
+    public synchronized void put(String url, Bitmap bitmap) {
         mMemeryCache.put(url,bitmap);
 
     }

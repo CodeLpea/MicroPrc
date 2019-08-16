@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.lp.lpdesignpatterns.ImageLoaderPrc.Loader.ImageBuilder;
 import com.example.lp.lpdesignpatterns.ImageLoaderPrc.Loader.ImageLoader;
 import com.example.lp.lpdesignpatterns.R;
 
@@ -20,13 +21,11 @@ public class ImageLoaderActivity extends AppCompatActivity {
     private String Url = "http://img1.juimg.com/180329/330819-1P32919115567.jpg";
     private Button bt_singe,bt_clear;
     private LinearLayout ll_scrollView;
-    private  ImageLoader imageLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_loader);
-        imageLoader=new ImageLoader();
         intView();
 
     }
@@ -65,6 +64,9 @@ public class ImageLoaderActivity extends AppCompatActivity {
         imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         ll_scrollView.addView(imageView);
-        imageLoader.displayImage(Url,imageView);
+        new ImageBuilder().setIcon(R.drawable.ic_launcher)
+                .setImageView(imageView)
+                .setUrl(Url)
+                .build();
     }
 }
