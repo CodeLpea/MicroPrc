@@ -66,23 +66,5 @@ public class ImageLoaderActivity extends AppCompatActivity {
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         ll_scrollView.addView(imageView);
         imageLoader.displayImage(Url,imageView);
-
-
-        /*
-        LpGlide.with(this).load(Url)
-                .loading(R.mipmap.ic_launcher)
-                .listener(new RequestListener() {
-                    @Override
-                    public boolean onSuccess(Bitmap bitmap) {
-                        Toast.makeText(LpGlideActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onFailure() {
-                        return false;
-                    }
-                }).Into(imageView);*/
-
     }
 }

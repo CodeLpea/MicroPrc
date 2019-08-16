@@ -1,0 +1,3 @@
+ImageLooaderPrc：面向对象的六大原则的demo
+
+singleTon：单例模式
