@@ -5,9 +5,13 @@ package com.example.lp.lpdesignpatterns.commandMode;
  * */
 public class Receiver {
     public void start(){
-        System.out.println("执行start命令");
+        System.out.println("准备执行----------start-----------------命令");
+        System.out.println("开始执行----------start-----------------命令");
+        System.out.println("执行完成----------start-----------------命令");
     }
     public void stop(){
-        System.out.println("执行stop命令");
+        System.out.println("准备执行----------stop------------------命令");
+        System.out.println("开始执行----------stop------------------命令");
+        System.out.println("执行完成----------stop------------------命令");
     }
 }

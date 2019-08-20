@@ -32,8 +32,8 @@ public class Invoker {
         public void redoAction(){
             if(redoList.size()>0){
                 Command redoCommand=redoList.get(redoList.size()-1);
-                redoCommand.excute();
                 System.out.println(redoCommand.getClass().getName()+"被恢复");
+                redoCommand.excute();
                 redoList.remove(redoList.size()-1);
                 list.add(redoCommand);
             }else {
@@ -43,6 +43,7 @@ public class Invoker {
         }
 
         public void allAction(){
+            System.out.println("执行所有命令");
             if(list.size()>0){
                 for (Command mCommand : list)
                 {
