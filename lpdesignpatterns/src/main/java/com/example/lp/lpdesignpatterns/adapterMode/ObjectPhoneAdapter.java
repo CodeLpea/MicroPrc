@@ -7,7 +7,7 @@ import com.example.lp.lpdesignpatterns.adapterMode.Electric;
  * 手机充电
  * 对象适配器实现
  * */
-public class ObjectPhoneAdapter extends Electric implements Adapter {
+public class ObjectPhoneAdapter implements Adapter {
     private Electric electric;
     public ObjectPhoneAdapter(Electric electric) {//通过构造方法传入对象
         this.electric = electric;

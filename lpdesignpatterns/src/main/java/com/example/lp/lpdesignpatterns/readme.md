@@ -19,3 +19,5 @@ observerMode：观察者模式
 proxyMode：代理模式
 
 adapterMode：适配器模式
+
+InterfaceObject：接口对象继承等
