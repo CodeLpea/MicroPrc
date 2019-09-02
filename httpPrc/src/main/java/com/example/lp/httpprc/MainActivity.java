@@ -1,10 +1,6 @@
 package com.example.lp.httpprc;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Point;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,26 +8,25 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.lp.lpaccessibility.LpAccessBilityActivity;
-import com.example.lp.lpaccessibility.service.LpAccessibilityService;
 
 import com.example.lp.lpautosize.AutoSizeActivity;
 import com.example.lp.lpdesignpatterns.ImageLoaderPrc.ImageLoaderActivity;
 import com.example.lp.lpglide.LpGlideActivity;
 
 import com.example.lp.lphttp.LpHttpActivity;
+import com.example.lp.lpmvp.ui.MvpMainActivity;
 import com.example.lp.lpuicore.UiCoreActivity;
 import com.tzutalin.dlib.LpFaceDetect;
 import com.tzutalin.dlib.VisionDetRet;
 import com.tzutalin.dlib.detect.CallbackListener;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore,lp_imageloader;
+    private static final String TAG = "MvpMainActivity";
+    private Button bt_lphttp, bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore,lp_imageloader,lp_mvp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         lp_autosize = findViewById(R.id.bt_LpAutoSize);
         lp_imageloader = findViewById(R.id.bt_imageloader);
         lp_uicore = findViewById(R.id.bt_uicore);
+        lp_mvp = findViewById(R.id.bt_mvp);
         bt_lphttp.setOnClickListener(mainOnClicLitner);
         bt_lpglide.setOnClickListener(mainOnClicLitner);
         bt_accessbility.setOnClickListener(mainOnClicLitner);
@@ -57,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         lp_autosize.setOnClickListener(mainOnClicLitner);
         lp_uicore.setOnClickListener(mainOnClicLitner);
         lp_imageloader.setOnClickListener(mainOnClicLitner);
+        lp_mvp.setOnClickListener(mainOnClicLitner);
 
     }
 
@@ -85,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bt_imageloader:
                     Intent intentImageloder = new Intent(MainActivity.this, ImageLoaderActivity.class);
                     startActivity(intentImageloder);
+                    break;
+                case R.id.bt_mvp:
+                    Intent intentMvp = new Intent(MainActivity.this, MvpMainActivity.class);
+                    startActivity(intentMvp);
                     break;
                 case R.id.bt_testface:
                     CallbackListener callbackListener=new CallbackListener() {

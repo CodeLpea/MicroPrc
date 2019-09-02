@@ -39,6 +39,7 @@ dependencies {
     implementation project(':lpautosize')
     implementation project(':lpuicore')
     implementation project(':lpdesignpatterns')
+    implementation project(':lpmvp')
     /*implementation project(':lpfacedetect')*/
     if(!isModule.toBoolean()){
         implementation project(':LpGlide')

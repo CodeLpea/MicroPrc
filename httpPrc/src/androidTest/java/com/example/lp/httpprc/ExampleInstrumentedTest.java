@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    private static final String TAG="MainActivity";
+    private static final String TAG="MvpMainActivity";
     private String Url="http://www.kuaidi100.com/query?type=yuantong&postid=11111111111";
 
     @Test

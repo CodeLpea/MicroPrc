@@ -21,3 +21,5 @@ proxyMode：代理模式
 adapterMode：适配器模式
 
 InterfaceObject：接口对象继承等
+
+Thread:多线程操作
