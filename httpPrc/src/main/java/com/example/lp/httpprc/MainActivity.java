@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lp.ServiceActivity;
 import com.example.lp.lpaccessibility.LpAccessBilityActivity;
 
 import com.example.lp.lpautosize.AutoSizeActivity;
@@ -71,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
     public void testOnClick(){
         Intent intent1 = new Intent(MainActivity.this, LpHttpActivity.class);
         startActivity(intent1);
+    }
+    @OnClick(R.id.bt_service)
+    public void lpServiceMoudle(){
+        startActivity(new Intent(MainActivity.this, ServiceActivity.class));
     }
 
     private class MainOnClicLitner implements View.OnClickListener {

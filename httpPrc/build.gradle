@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.lp.httpprc"
-        minSdkVersion 22
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -41,6 +41,7 @@ dependencies {
     implementation project(':lpdesignpatterns')
     implementation project(':lpmvp')
     implementation project(':lpreflect')
+    implementation project(':lpservice')
     /*implementation project(':lpfacedetect')*/
     if(!isModule.toBoolean()){
         implementation project(':LpGlide')
