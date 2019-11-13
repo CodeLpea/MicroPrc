@@ -4,12 +4,19 @@
 
     <application>
         <activity
-            android:configChanges="orientation|keyboardHidden"
             android:name=".ServiceActivity"
-            />
+            android:configChanges="orientation|keyboardHidden" />
 
         <service
             android:name=".BindServiceTest"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".messenger.MessengerClientActivity" />
+
+        <service
+            android:name=".messenger.MessengerService"
+            android:process=":remote"
             android:enabled="true"
             android:exported="true"></service>
     </application>
