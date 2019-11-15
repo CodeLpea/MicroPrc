@@ -11,11 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lp.aidl.AidlActivity;
 import com.example.lp.messenger.MessengerClientActivity;
 
 public class ServiceActivity extends AppCompatActivity {
     private static final String TAG="ServiceActivity";
-    private Button btn_start,btn_stop,btn_bind,btn_unbind,btn_messger;
+    private Button btn_start,btn_stop,btn_bind,btn_unbind,btn_messger,btn_aidl;
     private ClickListener clickListener=new ClickListener();
     private Context context=this;
 
@@ -34,11 +35,13 @@ public class ServiceActivity extends AppCompatActivity {
         btn_bind=findViewById(R.id.btn_bind_service);
         btn_unbind=findViewById(R.id.btn_unbind_service);
         btn_messger=findViewById(R.id.btn_messager_client);
+        btn_aidl=findViewById(R.id.btn_into_aidl);
         btn_start.setOnClickListener(clickListener);
         btn_stop.setOnClickListener(clickListener);
         btn_bind.setOnClickListener(clickListener);
         btn_unbind.setOnClickListener(clickListener);
         btn_messger.setOnClickListener(clickListener);
+        btn_aidl.setOnClickListener(clickListener);
 
     }
 
@@ -67,6 +70,10 @@ public class ServiceActivity extends AppCompatActivity {
             else if(v.getId()==R.id.btn_messager_client){
                 Log.i(TAG, "------------btn_messager_client: ");
                 startActivity(new Intent(ServiceActivity.this, MessengerClientActivity.class));
+            }
+            else if(v.getId()==R.id.btn_into_aidl){
+                Log.i(TAG, "------------btn_into_aidl: ");
+                startActivity(new Intent(ServiceActivity.this, AidlActivity.class));
             }
             else {
                 Log.i(TAG, "-------------onClick: ");

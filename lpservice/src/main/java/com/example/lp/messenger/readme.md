@@ -1,0 +1,18 @@
+Messenger简介:
+Messenger是基于Message对象进行跨进程通信的
+类似于Handler发送消息实现线程间通信一样的用法。
+
+服务端:MessengerService
+实现流程
+首先创建一个Handler对象
+接着创建一个Messenger对象，并把Handler对象以形参传入Messenger中
+最后通过mMessenger.getBinder得到Binder对象，在onBind方法中返回。
+接受客户端的消息，其实与线程间通信一样，同样是在handleMessage方法中接受；
+如果服务端需要回复客户端，则需要拿到客户端携带过来的Messenger 对象（即msg.replyTo），通过msg.replyTo.send方法给客户端发送信息。
+
+客户端：MessengerClientActivity
+客户端在绑定服务之后，在ServiceConnection中通过IBinder得到Messenger 对象（mService）；
+然后用mService的send方法把Message作为形参发送给客户端。
+如果服务端收到消息需要回复客户端，同样的需要先创建一个Handler对象；
+接着创建一个Messenger对象（mRelyMessenger）并把Handler传入其中；
+最后在onServiceConnected方法中，把mRelyMessenger对象赋值给message.replyTo，和服务端的流程类似。

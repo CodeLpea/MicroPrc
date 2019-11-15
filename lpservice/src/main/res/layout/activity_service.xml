@@ -38,5 +38,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="进入Messager" />
+    <Button
+        android:id="@+id/btn_into_aidl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进入AIDL" />
 
 </LinearLayout>

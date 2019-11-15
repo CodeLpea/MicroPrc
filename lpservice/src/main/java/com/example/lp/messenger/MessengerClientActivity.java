@@ -101,6 +101,9 @@ public class MessengerClientActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(connection);
+        if(serverMessnger!=null){
+            unbindService(connection);
+        }
+
     }
 }
