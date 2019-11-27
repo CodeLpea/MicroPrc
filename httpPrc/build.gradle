@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.example.lp.httpprc"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.Method1.runner.AndroidJUnitRunner"
@@ -17,23 +17,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     repositories {
         flatDir {
             dirs 'libs'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.alibaba:fastjson:1.2.32'
     testImplementation 'junit:junit:4.12'
-
     implementation(name: 'lpfacedetect-debug', ext: 'aar')
-
     implementation project(':Lphttp')
     implementation project(':lpaccessibility')
     implementation project(':lpautosize')
@@ -42,8 +41,9 @@ dependencies {
     implementation project(':lpmvp')
     implementation project(':lpreflect')
     implementation project(':lpservice')
+    implementation project(':lpskin')
     /*implementation project(':lpfacedetect')*/
-    if(!isModule.toBoolean()){
+    if (!isModule.toBoolean()) {
         implementation project(':LpGlide')
     }
 }

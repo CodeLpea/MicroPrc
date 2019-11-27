@@ -3,7 +3,7 @@
     package="com.example.lpreflect">
 
     <application>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainReflectActivity" />
     </application>
 
 </manifest>

@@ -136,7 +136,7 @@ public class InjectManager {
         //通过反射，获取类至上的注解,getAnnotation（xxx.class）获取到xxx注解
         ContentView contentView = clazz.getAnnotation(ContentView.class);
         if (contentView != null) {
-            //activity.setContentView(R.layout.activity_main);
+            //activity.setContentView(R.layout.activity_reflect_main);
             int layoutId = contentView.value();
 
             //获取到父类的方法

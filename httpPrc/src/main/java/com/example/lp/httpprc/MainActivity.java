@@ -20,6 +20,7 @@ import com.example.lp.lpuicore.UiCoreActivity;
 import com.example.lpreflect.annotation.ContentView;
 import com.example.lpreflect.annotation.FindView;
 import com.example.lpreflect.annotation.OnClick;
+import com.example.lpskin.SplashActivity;
 import com.tzutalin.dlib.LpFaceDetect;
 import com.tzutalin.dlib.VisionDetRet;
 import com.tzutalin.dlib.detect.CallbackListener;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @FindView(R.id.bt_Lphttp)
     private Button bt_lphttp;
 
-    private Button bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore,lp_imageloader,lp_mvp;
+    private Button bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore,lp_imageloader,lp_mvp,bt_skin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         lp_imageloader = findViewById(R.id.bt_imageloader);
         lp_uicore = findViewById(R.id.bt_uicore);
         lp_mvp = findViewById(R.id.bt_mvp);
+        bt_skin = findViewById(R.id.bt_skin);
         //bt_lphttp.setOnClickListener(mainOnClicLitner);
         bt_lpglide.setOnClickListener(mainOnClicLitner);
         bt_accessbility.setOnClickListener(mainOnClicLitner);
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         lp_uicore.setOnClickListener(mainOnClicLitner);
         lp_imageloader.setOnClickListener(mainOnClicLitner);
         lp_mvp.setOnClickListener(mainOnClicLitner);
+        bt_skin.setOnClickListener(mainOnClicLitner);
 
     }
 
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
 //                case R.id.bt_Lphttp:
-//                   Intent intent1 = new Intent(MainActivity.this, LpHttpActivity.class);
+//                   Intent intent1 = new Intent(SkinMainActivity.this, LpHttpActivity.class);
 //                    startActivity(intent1);
 //                    break;
                 case R.id.bt_LpGlide:
@@ -129,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bt_uicore:
                     Intent intentUicore = new Intent(MainActivity.this, UiCoreActivity.class);
                     startActivity(intentUicore);
+                    break;
+                case R.id.bt_skin:
+                    Intent intentSkin = new Intent(MainActivity.this, SplashActivity.class);
+                    startActivity(intentSkin);
                     break;
 
             }

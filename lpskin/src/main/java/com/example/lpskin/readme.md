@@ -1,0 +1,11 @@
+基于网易云动态换肤原理的换肤模块
+首先，获取到换肤源文件（实际上就是一个apk文件）
+然后读取源文件中的皮肤资源文件，通过获取源文件的Resources类来获取皮肤源文件中各资源的ID
+监听Activity的创建，并将Activity中各个布局和控件的与皮肤主题相关的属性添加到需要换肤的集合类中
+然后直接启动换肤，如果没有目标源文件，则使用自身的ID，如果找到源文件ID，则使用目标皮肤
+动态换肤是直接通过集合类文件中保存的View对象，直接使用控件来换肤。
+
+使用方法：
+在目标模块的Application中，
+初始化SkinManager.init(Application)
+在需要换肤的地方，使用SkinManager.getinstance（）.loadSkin（path）
