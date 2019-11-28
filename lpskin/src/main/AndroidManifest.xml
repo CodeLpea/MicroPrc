@@ -8,10 +8,10 @@
         android:name="com.example.lpskin.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
+        <!--android:theme="@style/SkinTheme">   -->
+        <!--由于同个程序中不同模块不能使用不同的theme因此暂时注释-->
 
         <activity android:name="com.example.lpskin.SplashActivity"
             android:theme="@style/SplashTheme">
