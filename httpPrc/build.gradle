@@ -46,4 +46,5 @@ dependencies {
     if (!isModule.toBoolean()) {
         implementation project(':LpGlide')
     }
+    implementation project(':lpactivity')
 }

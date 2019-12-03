@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lpactivity">
+
+    <application>
+        <activity android:name=".standard.StandActivity" />
+        <activity android:name=".standard.Stand2Activity" />
+        <activity android:name=".standard.Stand3Activity" />
+        <activity
+            android:name=".singleTask.Task1Activity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".singleTop.SingleTopActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".singleInstance.SingleInstanceActivity"
+            android:launchMode="singleInstance" />
+        <activity android:name=".singleInstance.SingleInstance2Activity"
+            android:launchMode="singleInstance"
+            >
+
+        </activity>
+    </application>
+
+</manifest>

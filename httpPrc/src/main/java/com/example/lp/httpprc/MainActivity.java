@@ -17,6 +17,7 @@ import com.example.lp.lpglide.LpGlideActivity;
 import com.example.lp.lphttp.LpHttpActivity;
 import com.example.lp.lpmvp.ui.MvpMainActivity;
 import com.example.lp.lpuicore.UiCoreActivity;
+import com.example.lpactivity.standard.StandActivity;
 import com.example.lpreflect.annotation.ContentView;
 import com.example.lpreflect.annotation.FindView;
 import com.example.lpreflect.annotation.OnClick;
@@ -79,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.bt_service)
     public void lpServiceMoudle(){
         startActivity(new Intent(MainActivity.this, ServiceActivity.class));
+    }
+    @OnClick(R.id.bt_activity)
+    public void lpActivityMoudle(){
+        startActivity(new Intent(MainActivity.this, StandActivity.class));
     }
 
     private class MainOnClicLitner implements View.OnClickListener {
