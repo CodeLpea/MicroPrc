@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.lp.ServiceActivity;
 import com.example.lp.lpaccessibility.LpAccessBilityActivity;
@@ -18,6 +19,11 @@ import com.example.lp.lphttp.LpHttpActivity;
 import com.example.lp.lpmvp.ui.MvpMainActivity;
 import com.example.lp.lpuicore.UiCoreActivity;
 import com.example.lpactivity.standard.StandActivity;
+import com.example.lpnetstatus.NetStatusBus;
+import com.example.lpnetstatus.annotation.NetSubscribe;
+import com.example.lpnetstatus.annotation.type.Mode;
+import com.example.lpnetstatus.annotation.type.NetType;
+import com.example.lpnetstatus.annotation.type.ThreadWhere;
 import com.example.lpreflect.annotation.ContentView;
 import com.example.lpreflect.annotation.FindView;
 import com.example.lpreflect.annotation.OnClick;
@@ -37,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     @FindView(R.id.bt_Lphttp)
     private Button bt_lphttp;
+
+    @FindView(R.id.tv_netstatus)
+    private TextView tv_net_status;
 
     private Button bt_lpglide,bt_accessbility,bt_testface,lp_autosize,lp_uicore,lp_imageloader,lp_mvp,bt_skin;
 
@@ -146,6 +155,36 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+    }
+
+
+    @NetSubscribe(mode = Mode.AUTO,threadwhere = ThreadWhere.UI)
+    private void netStatus(NetType netType){
+        switch (netType) {
+            case NONE:
+                tv_net_status.setText("网络连接中断...");
+                break;
+            case WIFI:
+                tv_net_status.setText("wifi已连接");
+                break;
+            case MOBILE:
+                tv_net_status.setText("移动网络已连接");
+                break;
+            default:
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        NetStatusBus.getInstance().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        NetStatusBus.getInstance().unRegister(this);
     }
 
 

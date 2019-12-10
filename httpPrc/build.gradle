@@ -47,4 +47,5 @@ dependencies {
         implementation project(':LpGlide')
     }
     implementation project(':lpactivity')
+    implementation project(':lpnetstatus')
 }
